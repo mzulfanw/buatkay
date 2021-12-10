@@ -13,7 +13,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0;
+    margin: 100px 0;
     flex-direction: column;
 }
 
@@ -28,6 +28,7 @@ body {
     position: relative;
     animation: down 1s ease infinite;
     top: 0;
+    z-index: -99;
 }
 
 .row-timeline {
@@ -44,6 +45,66 @@ body {
 
 .row-timeline div {
     margin: 20px 0;
+}
+
+.button-float {
+    position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	text-align:center;
+    border-radius:50%;
+    background-color: #edf6f9;
+	
+}
+
+.button-float .btn {
+    margin-top:7px;
+    padding: 10px;
+    cursor: pointer;
+    animation: rotate 1s  ease-in-out alternate infinite;
+    transform: rotate(0);
+}
+
+.message {
+    display: none;
+    margin: 0 auto;
+   max-width: 50%;
+    position: sticky;
+    top: 100px;
+    background-color: #edf6f9;
+    height: 40%;    
+    transition: all 0.4s ease;
+    padding: 40px;
+}
+
+
+
+.message > h1,p {
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.message button {
+    padding: 10px 20px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background-color: #4361ee;
+    color: white;
+    font-family: 'Crete Round', serif;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(-20deg);
+    }
 }
 
 .image-wrapper img {
@@ -72,5 +133,11 @@ body {
 
      .wrapper-text-heading h1 {
          font-size: 22px;
+     }
+     .message {
+         max-width: 100%;
+         margin: 0 10px;
+         border-radius: 20px;
+         border: .2px solid #000;
      }
 }

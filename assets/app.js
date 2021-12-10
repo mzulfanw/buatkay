@@ -20,12 +20,28 @@ let x = setInterval(() => {
 
 let time = new Date;
 let greeting = document.getElementById("greetings")
-let hours = time.getTime();
+let hours = time.getHours();
+const words = ["Selamat Pagi Kayy", "Selamat Soree Kay", "Selamat Malam Kayy"]
+let text = '';
 
-if (hours < 12) {
-    greeting.innerText = "Selamat Pagi Kay"
-} else if (hours < 15) {
-    greeting.innerText = "Selamat Soree Kayy"
-} else if (hours > 8) {
-    greeting.innerText = "Selamat Malemm Kayy"
+if (hours < 12) text = words[0];
+else if (hours < 18) text = words[1];
+else text = words[2];
+greeting.innerHTML = text;
+
+
+
+const btn = document.getElementById("btn-float");
+btn.addEventListener('click', () => {
+    let message = document.querySelector('#message');
+    if (message.style.display === "none") {
+        message.style.display = "block"
+    } else {
+        message.style.display = "none"
+    }
+})
+
+function Okeey() {
+    let message = document.querySelector('#message')
+    message.style.display = 'none'
 }
